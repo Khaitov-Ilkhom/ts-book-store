@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
+  <link href="./output.css" rel="stylesheet">
   <title>Title</title>
 </head>
 <body>
 
-<h2 class="text-red-400 bg-amber-300">Hello world</h2>
+<div class="w-full h-screen flex flex-col justify-center items-start md:flex-row gap-8 p-8 bg-gray-400">
+  <div class="w-[400px]">
+    <form action="" id="createForm" class="space-y-2">
+      <div class="">
+        <label for="book-name" class="block text-sm font-medium text-gray-900">Book Name</label>
+        <input id="book-name" type="text" placeholder="Book name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 text-sm text-gray-900">
+      </div>
+      <div class="">
+        <label for="book-author" class="block text-sm font-medium text-gray-900">Book Author</label>
+        <input id="book-author" type="text" placeholder="Book Author" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 text-sm text-gray-900">
+      </div>
+      <div class="">
+        <label for="book-image" class="block text-sm font-medium text-gray-900">Book Image URL</label>
+        <input id="book-image" type="url" placeholder="Book Image" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 text-sm text-gray-900">
+      </div>
+      <div class="">
+        <label for="book-price" class="block text-sm font-medium text-gray-900">Book Price</label>
+        <input id="book-price" type="number" placeholder="Book Price" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 text-sm text-gray-900">
+      </div>
+      <div class="">
+        <label for="book-stock" class="block text-sm font-medium text-gray-900">Book Stock</label>
+        <input id="book-stock" type="number" placeholder="Book Stock" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 text-sm text-gray-900">
+      </div>
+      <div class="">
+        <label for="genre" class="block text-sm font-medium text-gray-900">Select Genre</label>
+        <select id="genre" name="" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 text-sm text-gray-900">
+          <option value="" disabled selected>Select genre</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Non-fiction">Non-fiction</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Sci-fi">Sci-fi</option>
+        </select>
+      </div>
+      <button type="submit" class="w-full px-4 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-700 transition duration-200 text-sm">Create new book</button>
+    </form>
+  </div>
+  <div id="bookListContainer" class="w-full grid grid-cols-2 gap-4">
+  </div>
+</div>
 
 <script src="./ts/app.js"></script>
 </body>
