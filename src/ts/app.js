@@ -11,7 +11,7 @@ class Book {
     bookPrice;
     bookStatus;
     bookStock;
-    constructor(bookName, bookAuthor, bookPages, bookGenre, bookPrice, bookStock) {
+    constructor(bookName, bookAuthor, bookPages, bookPrice, bookStock, bookGenre) {
         this.bookId = String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
@@ -39,8 +39,8 @@ class Render {
             bookElement.classList.add("card");
             bookElement.innerHTML = `
         <div class="w-full flex justify-center items-start rounded gap-4">
-          <div>
-           <img src="${book.bookImage}" alt="${book.bookName}" width="150" class="rounded" />
+          <div class="w-[160px] h-[160px] overflow-hidden flex justify-center items-center rounded">
+           <img src="${book.bookPages}" alt="${book.bookName}" class="w-full h-full object-cover " />
           </div>
           <div class="flex-1">
             <h3 class="text-3xl text-black">${book.bookName}</h3>

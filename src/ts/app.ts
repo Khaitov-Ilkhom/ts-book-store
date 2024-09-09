@@ -29,7 +29,7 @@ class Book implements IBookC {
   bookStatus: string;
   bookStock: number;
 
-  constructor(bookName: string, bookAuthor: string, bookPages: string, bookGenre: string, bookPrice: number, bookStock: number) {
+  constructor(bookName: string, bookAuthor: string, bookPages: string, bookPrice: number, bookStock: number, bookGenre: string) {
     this.bookId = String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
     this.bookName = bookName;
     this.bookAuthor = bookAuthor;
@@ -64,8 +64,8 @@ class Render implements IRender {
       bookElement.classList.add("card")
       bookElement.innerHTML = `
         <div class="w-full flex justify-center items-start rounded gap-4">
-          <div>
-           <img src="${book.bookImage}" alt="${book.bookName}" width="150" class="rounded" />
+          <div class="w-[160px] h-[160px] overflow-hidden flex justify-center items-center rounded">
+           <img src="${book.bookPages}" alt="${book.bookName}" class="w-full h-full object-cover " />
           </div>
           <div class="flex-1">
             <h3 class="text-3xl text-black">${book.bookName}</h3>
@@ -120,7 +120,7 @@ const handleCreateBook = (e: SubmitEvent) => {
     return inputElement.value;
   });
 
-  const newBook = new Book(...values as [string, string, string, string, number, number]);
+  const newBook = new Book(...values as [string, string, string, number, number, string]);
   newBook.addToBookList();
   render.renderBooks(bookList);
 };
